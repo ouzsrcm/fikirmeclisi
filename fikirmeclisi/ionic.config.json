@@ -1,0 +1,7 @@
+{
+  "name": "fikirmeclisi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
