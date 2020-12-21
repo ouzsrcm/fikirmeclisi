@@ -1,2 +1,2 @@
 # fikirmeclisi
-ionic fw ile site denemeleri :)
+ionic fw mobil site denemeleri :)
