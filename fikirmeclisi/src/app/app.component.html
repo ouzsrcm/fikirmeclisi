@@ -5,7 +5,7 @@
         <ion-list id="inbox-list">
           <img src="../assets/fikir-atlasi-1.png" />
           <ion-menu-toggle auto-hide="false" *ngFor="let p of categories; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.CategoryId]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="['/category', p.CategoryId]" lines="none" detail="false" [class.selected]="selectedIndex == i">
               <ion-label>{{ p.Title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>

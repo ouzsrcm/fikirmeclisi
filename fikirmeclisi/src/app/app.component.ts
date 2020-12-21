@@ -13,6 +13,7 @@ import { CategoriesService } from './services/categories.service';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
+  public category:Categories;
   public categories:Categories[];
 
   constructor(
@@ -34,8 +35,5 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const path = window.location.pathname.split('category/')[1];
     this.categoriesService.list().subscribe(x => this.categories = x);
-    if (path !== undefined) {
-      this.selectedIndex = this.categories.findIndex(page => page.Title.toLowerCase() === path.toLowerCase());
-    }
   }
 }
