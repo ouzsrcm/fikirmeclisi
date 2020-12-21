@@ -13,7 +13,7 @@ export class CategoryComponent implements OnInit {
   id:string;
   private sub:any;
   public category:Categories;
-  public categories:Categories[];
+  public categories:Categories[] = [];
 
   constructor(private route:ActivatedRoute,
     private categoriesService:CategoriesService) {
@@ -25,7 +25,7 @@ export class CategoryComponent implements OnInit {
       this.id = x['id'];
     });
     this.categoriesService.list().subscribe(x => this.categories = x);
-    this.category = (this.categories || []).filter(function(x){
+    this.category = (this.categories || []).filter((x) => {
       return x.CategoryId == this.id;
     })[0];
   }

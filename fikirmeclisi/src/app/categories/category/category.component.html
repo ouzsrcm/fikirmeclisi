@@ -16,8 +16,8 @@
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
-    <p>
-      
+    <p *ngIf="category">
+      {{category.Title}}
     </p>
   </div>
 </ion-content>
