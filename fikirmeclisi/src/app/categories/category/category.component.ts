@@ -10,9 +10,9 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class CategoryComponent implements OnInit {
 
-  id:string;
+  public id:string;
   private sub:any;
-  public category:Categories;
+  public category:Categories = null;
   public categories:Categories[] = [];
 
   constructor(private route:ActivatedRoute,
