@@ -36,4 +36,5 @@ export class AppComponent implements OnInit {
     const path = window.location.pathname.split('category/')[1];
     this.categoriesService.list().subscribe(x => this.categories = x);
   }
+  
 }
