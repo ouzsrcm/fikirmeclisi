@@ -29,12 +29,12 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.serviceLoaderService.load();
+      // this.serviceLoaderService.load();
     });
   }
 
   ngOnInit() {
-    this.Categories = this.serviceLoaderService.CategoryService.Categories;
+    // this.Categories = this.serviceLoaderService.CategoryService.Categories;
   }
   
 }

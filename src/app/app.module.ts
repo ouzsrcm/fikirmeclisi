@@ -8,8 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+import { SQLite } from '@ionic-native/sqlite/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +27,8 @@ import { FormsModule } from '@angular/forms';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    SQLitePorter
   ],
   bootstrap: [AppComponent]
 })
