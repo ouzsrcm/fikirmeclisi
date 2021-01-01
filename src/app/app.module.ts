@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
-import { SQLite } from '@ionic-native/sqlite/ngx';
+import { IonicStorageModule } from '@ionic/storage';
+import { Network } from '@ionic-native/network/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,13 +23,15 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLitePorter
+    SQLitePorter,
+    Network
   ],
   bootstrap: [AppComponent]
 })

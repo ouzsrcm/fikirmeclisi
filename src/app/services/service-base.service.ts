@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,7 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceBaseService {
 
-  constructor(public http:HttpClient) {
+  public API_STORAGE_KEY:string = 'ouzsrcm';
+  public API_URL:string = 'https://fikiratlasi.com/';
+
+  constructor() {
     
   }
+
 }
