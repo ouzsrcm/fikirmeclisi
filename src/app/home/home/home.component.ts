@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectionStatus, NetworkService } from 'src/app/services/network.service';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
@@ -8,10 +9,12 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private posts:PostsService) { }
+  constructor(private posts:PostsService, private networkService:NetworkService) { }
 
   ngOnInit() {
-    var res = this.posts.get(true);
+    debugger;
+    var res = this.posts.get(false);
+    console.log(res);
   }
 
 }

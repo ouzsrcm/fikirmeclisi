@@ -18,6 +18,7 @@ export class NetworkService {
   constructor(private network:Network, private toastController:ToastController, private plt:Platform) {
     this.plt.ready().then(() => {
       this.initializeNetworkEvents();
+      console.log(this.network);
       let status = this.network.type !== 'none' ? ConnectionStatus.Online :  ConnectionStatus.Offline;
       this.status.next(status);
     });
@@ -34,13 +35,11 @@ export class NetworkService {
       {
         this.updateNetworkStatus(ConnectionStatus.Online);
       }
-    });    
+    });
   }
 
   private async updateNetworkStatus(status: ConnectionStatus) {
     this.status.next(status);
-
-    let connection = status == ConnectionStatus.Offline ? 'Offline':'Online';
     let toast = this.toastController.create({
       message:'Online',
       duration:3000,
