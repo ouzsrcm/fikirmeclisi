@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Categories } from './models/Categories';
-import { ServiceLoaderService } from './services/service-loader.service';
 import { Category } from './models/Category';
 
 @Component({
@@ -19,8 +17,7 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private serviceLoaderService:ServiceLoaderService
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
@@ -29,12 +26,10 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      // this.serviceLoaderService.load();
     });
   }
 
   ngOnInit() {
-    // this.Categories = this.serviceLoaderService.CategoryService.Categories;
   }
   
 }

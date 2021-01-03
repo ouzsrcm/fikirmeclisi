@@ -7,13 +7,13 @@ import { ServiceBaseService } from './service-base.service'
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriesService extends ServiceBaseService {
+export class CategoriesService {
   
   public Categories:Category[] = [];
   public apiUrl: string = 'http://www.fikiratlasi.com/';
 
   constructor(public http: HttpClient) {
-    super(http);
+    
   }
 
   public initialize() {
